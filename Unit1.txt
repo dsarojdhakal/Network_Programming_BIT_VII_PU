@@ -1,0 +1,744 @@
+1.1 Computer Network Basics
+
+        A computer network is a system of interconnected devices (nodes) such as computers, servers, routers, 
+            switches, and mobile devices that communicate and share data, resources, and services 
+            using communication protocols over wired or wireless media.
+
+        Objectives of Computer Networks:
+            Resource sharing (printers, files, internet)
+            Communication (email, messaging, VoIP)
+            Data exchange and access
+            Centralized management
+            Reliability and scalability
+
+        Types of Networks (based on coverage area):
+            LAN (Local Area Network): Small area (home, office, campus)
+            MAN (Metropolitan Area Network): City-level network
+            WAN (Wide Area Network): Large geographical area (Internet)
+
+        Components of a Network:
+            Sender (Source): Device that initiates communication
+            Receiver (Destination): Device that receives data
+            Message: Information being transmitted (text, video, audio)
+
+        Transmission Medium:
+            Wired: Twisted pair, coaxial cable, fiber optics
+            Wireless: Wi-Fi, Bluetooth, radio waves
+            Protocol: Set of rules governing communication (e.g., TCP, IP)
+
+        Data Transmission Concepts:
+            Analog vs Digital Signals
+                Bandwidth: Maximum data transfer rate (bps)
+                Latency: Delay in data transmission
+                Throughput: Actual data transfer rate
+                Packet Switching: Data divided into packets and sent independently
+
+
+
+    Client–Server Model
+        The client–server model is a distributed architecture where clients request services and 
+            servers provide responses. It is the foundation of most modern network applications.
+
+        Components Client–Server Model are:
+            Client:
+                Initiates communication
+                Sends requests to server
+                Examples: Web browser, mobile apps, email clients
+
+            Server:
+                Listens for incoming requests
+                Processes and responds to requests
+                Examples: Web server (Apache), database server (MySQL)
+
+        Working Mechanism:
+            1. Client sends a request (e.g., HTTP request).
+            2. Server receives and processes the request.
+            3. Server sends a response (e.g., webpage).
+            4. Connection may close or remain open depending on protocol.
+
+        Types of Servers:
+            Web Server (HTTP/HTTPS)
+            File Server (FTP)
+            Mail Server (SMTP, POP3, IMAP)
+            Database Server
+
+        Characteristics:
+            Centralized system
+            Supports multiple clients simultaneously
+            Uses request-response model
+
+        Advantages:
+            Centralized data management
+            Easy maintenance and updates
+            Better security control (authentication, access control)
+            Scalability using powerful servers
+
+        Disadvantages:
+            Single point of failure
+            Network dependency
+            Server overload possible under heavy traffic
+            Cost of server infrastructure
+
+        Comparison with Peer-to-Peer (P2P):
+            Client-Server: Centralized, secure, scalable
+            P2P: Decentralized, less secure, no central authority
+
+
+
+    Protocol Suites: ISO/OSI Model and TCP/IP Model
+        A protocol suite is a collection of protocols organized into layers, 
+        where each layer performs specific functions and communicates with adjacent layers 
+        to ensure reliable data transmission.
+
+        Benefits of Layered Architecture are:
+            Modularity (each layer works independently)
+            Interoperability (different systems can communicate)
+            Simplified troubleshooting
+            Flexibility in development
+
+
+        ISO/OSI Model (Open Systems Interconnection Model)
+
+        Definition:
+        A 7-layer conceptual model developed by ISO to standardize network communication and 
+            guide system design.
+        Data Flow in OSI Model is:
+            Data is encapsulated as it moves down layers
+            Each layer adds its own header
+            At receiver side, data is decapsulated layer by layer
+
+        Layers (Top to Bottom):
+
+            7. Application Layer
+                Interface between user and network
+                Provides network services to applications
+                Examples: HTTP, FTP, SMTP, DNS
+
+            6. Presentation Layer
+                Data translation (ASCII, Unicode)
+                Encryption and decryption (security)
+                Compression and decompression
+
+            5. Session Layer
+                Establishes, manages, and terminates sessions
+                Synchronization (checkpoints in data transfer)
+                Dialog control (full-duplex/half-duplex)
+
+            4. Transport Layer
+                End-to-end communication
+                Segmentation and reassembly
+                Error detection and correction
+                Flow control (prevents data overflow)
+                Protocols:
+                    TCP (reliable, connection-oriented)
+                    UDP (fast, connectionless)
+
+            3. Network Layer
+                Logical addressing (IP addresses)
+                Routing (path determination)
+                Packet forwarding across networks
+                Devices: Routers
+
+            2. Data Link Layer
+                Node-to-node delivery
+                Framing (divides data into frames)
+                MAC addressing (physical address)
+                Error detection (CRC)
+                Devices: Switches, Bridges
+
+            1. Physical Layer
+                Transmission of raw bits (0s and 1s)
+                Electrical, optical, or radio signals
+                Defines cables, connectors, voltage levels
+                Devices: Hubs, repeaters
+
+
+
+
+    TCP/IP Model (Internet Model)
+        A practical networking model used in real-world implementations, especially the Internet. 
+        It simplifies OSI layers into fewer layers.
+        Encapsulation in TCP/IP:
+            Application Data → Segment (Transport)
+            Segment → Packet (Internet)
+            Packet → Frame (Network Access)
+
+        Layers (Top to Bottom):
+
+            4. Application Layer
+                Combines OSI Application, Presentation, Session layers
+                Handles user interface and protocols
+                Protocols: HTTP, FTP, SMTP, DNS, Telnet
+
+            3. Transport Layer
+                End-to-end communication
+                Segmentation and error handling
+                Protocols:
+                    TCP: Reliable, connection-oriented, uses acknowledgments
+                    UDP: Fast, connectionless, no guarantee of delivery
+
+            2. Internet Layer
+                Logical addressing and routing
+                Packet delivery across networks
+                Protocols:
+                    IP (IPv4, IPv6)
+                    ICMP(The Internet Control Message Protocol) (error reporting)
+                    ARP (address resolution)
+
+            1. Network Access Layer (Link Layer)
+                Combines Data Link and Physical layers
+                Handles hardware addressing and physical transmission
+                Protocols: Ethernet, Wi-Fi
+
+
+    --> Write the difference between OSI and TCP/IP.
+
+
+1.2 Unix Standards
+        Unix standards are a set of specifications and guidelines that ensure 
+            compatibility, 
+            portability, and 
+            interoperability across different Unix and Unix-like operating systems. 
+        These standards allow software to run consistently on different systems without major modification.
+
+        Importance of Unix Standards:
+            Portability: Programs can run on different Unix systems
+            Interoperability: Different systems can work together
+            Consistency: Uniform behavior across platforms
+            Simplifies development and maintenance
+            Essential for network programming and system-level programming
+
+
+    POSIX (Portable Operating System Interface)
+        POSIX is a family of standards defined by IEEE that specifies a standard interface for 
+            Unix-like operating systems, especially for system calls, libraries, and utilities.
+            It ensures cross-platform compatibility
+            Adopted in Linux, macOS, and Unix systems
+            Reduces software development complexity
+
+        Features of POSIX:
+            Standardized system calls (e.g., fork(), exec(), read(), write())
+            Standard C library functions
+            Shell and utility standards
+            File system interface standardization
+            Process and thread management
+
+        POSIX Components:
+            POSIX.1: Core system interfaces (APIs)
+            POSIX.2: Shell and utilities
+            POSIX Threads (pthreads): Multithreading support
+
+        Examples of POSIX Functions:
+            Process control: fork(), exec()
+            File handling: open(), read(), write(), close()
+            Signals: signal(), kill()
+            IPC: pipe(), shared memory
+
+
+    Open Group
+        The Open Group is an international consortium that develops and maintains standards 
+            and certifications for Unix systems.
+        Provides industry-level standardization
+        Ensures reliability and compatibility in enterprise systems
+        Maintains the Single UNIX Specification (SUS)
+        Certifies operating systems as "UNIX" compliant
+        Ensures consistency across Unix implementations
+
+        Single UNIX Specification (SUS):
+            Combines POSIX standards with additional specifications
+            Defines system interfaces, utilities, and libraries
+            Ensures uniform behavior of Unix systems
+
+        UNIX Certification:
+            Systems must pass strict tests to be officially called "UNIX"
+            Examples: IBM AIX, Oracle Solaris
+
+
+    IETF (Internet Engineering Task Force)
+            IETF is an open international organization responsible for 
+                developing and promoting Internet standards, especially networking protocols.
+            Develops protocols used in the Internet
+            Publishes standards as RFCs (Request for Comments)
+            Ensures scalability and interoperability of networks
+
+        Important Protocols Developed by IETF:
+            TCP/IP (Transmission Control Protocol / Internet Protocol)
+            HTTP (HyperText Transfer Protocol)
+            FTP (File Transfer Protocol)
+            SMTP (Simple Mail Transfer Protocol)
+            DNS (Domain Name System)
+
+        RFC (Request for Comments):
+            Official documents describing protocols and standards
+            Example: RFC 793 (TCP), RFC 791 (IP)
+
+        Characteristics of IETF:
+            Open participation (anyone can contribute)
+            Consensus-based decision making
+            Focus on practical implementation
+
+
+1.3 Network Utilities
+
+        Network utilities are command-line tools used to configure, monitor, test, 
+            and troubleshoot computer networks. 
+        They are essential for network administrators and programmers 
+            to analyze network behavior and diagnose problems.
+
+
+    Telnet
+        telnet is a network utility used to remotely access another computer over a 
+            TCP/IP network using a command-line interface.
+        Remote login to servers
+        Testing open ports and services
+        Debugging network services
+        It is simple and easy to use
+        Useful for testing connectivity
+        Not secure (data is transmitted in plain text)
+        Replaced by SSH (Secure Shell) in modern systems
+
+        Working Principle:
+            Uses TCP protocol (default port 23)
+            Establishes a remote session between client and server
+            Allows execution of commands on the remote machine
+
+        Syntax:
+            telnet <hostname/IP> <port>
+
+        Example:
+            telnet example.com 23
+
+
+
+    route
+        route is used to view and modify the routing table of a system, 
+        which determines how packets are forwarded to different networks.
+        It is used to configure static routes
+        Diagnose routing problems
+        Control packet flow in networks
+        Note: The route command is deprecated on many modern Linux systems in favor of ip route. 
+
+        Routing Table:
+            Contains destination networks, gateways, and interfaces
+            Used by the OS to decide packet forwarding path
+
+        Commands used:
+            route -n (Linux): Display routing table
+            route add <destination> gw <gateway>
+            route del <destination> (used to remove an existing static route from the kernel routing table)
+            sudo route add default gw <gateway_ip>(modern format: Linux)
+
+        
+
+
+    ipconfig / ifconfig
+
+        Utilities used to display and configure network interface settings.
+
+        ipconfig (Windows):
+            Displays IP address, subnet mask, default gateway
+            Used for troubleshooting network issues
+
+        Common Commands:
+            ipconfig
+            ipconfig /all
+            ipconfig /release
+            ipconfig /renew
+
+    ifconfig (Unix/Linux older):
+        Displays and configures network interfaces
+        it is used for:
+            Check IP configuration
+            Enable/disable interfaces
+            Troubleshoot connectivity issues
+        Example:
+            ifconfig
+            ifconfig eth0 up(to activate the specified network interface, eth0)
+            ifconfig eth0 down(disables the eth0 network interface in Linux)
+
+        Modern Alternative (Linux):
+            ip command (e.g., ip addr, ip link)
+
+
+    ping
+        ping is used to test connectivity between two network devices by sending ICMP echo request packets.
+        It is used to check if a host is reachable
+        Measure network delay
+        Diagnose connectivity problems
+        Working Principle of ping command:
+            Sends ICMP Echo Request
+            Receives ICMP Echo Reply
+            Measures round-trip time (RTT)
+
+        Syntax:
+            ping <hostname/IP>
+
+        Example:
+            ping google.com
+
+        Output Information:
+            Packet loss
+            Round-trip time (latency)
+            TTL (Time To Live)
+
+
+    netstat
+        netstat (network statistics) displays 
+                network connections, 
+                routing tables, 
+                interface statistics, and 
+                protocol information,
+                Listening ports.
+        It is used to:
+            Monitor network activity
+            Identify open ports
+            Detect suspicious connections
+
+        Common Commands:
+            netstat -a (all connections)
+            netstat -t (TCP connections)
+            netstat -u (UDP connections)
+            netstat -n (numeric addresses)
+            netstat -r (routing table)
+
+        Modern Alternative:
+            ss command (faster and more efficient)
+
+
+    ftp (File Transfer Protocol)
+        ftp is a standard network protocol used to transfer files between a client and a server 
+            over a TCP/IP network.
+        It is used to:
+            Transfer files between systems
+            Remote file management
+        Simple file transfer mechanism
+        It is most widely used everywhere.
+        Not secure (data and credentials sent in plain text)
+        Replaced by secure alternatives like SFTP and FTPS
+
+        Working Principle:
+            Uses TCP (ports 21 for control, 20 for data)
+            Establishes connection between client and server
+            Supports file upload and download
+
+        Modes of Operation:
+            Active Mode
+            Passive Mode
+
+        Basic Commands:
+            ftp <hostname>
+            get <filename> (download)
+            put <filename> (upload)
+            ls (list files)
+            bye (exit)
+
+
+        telnet: Remote login (insecure, replaced by SSH)
+        route: Manage routing table
+        ipconfig/ifconfig: View and configure IP settings
+        ping: Test connectivity using ICMP
+        netstat: View network statistics and connections
+        ftp: Transfer files over network (insecure)
+
+
+
+1.4 Programming Basics
+
+        It is the fundamental concepts, tools, and components required to develop network-based 
+            applications, especially in C/Unix environments. 
+            These include wrapper functions, header files, libraries, port numbers, and IP addressing.
+        
+        Wrapper Functions
+            Wrapper functions are user-defined functions that encapsulate (wrap) system calls or 
+            library functions to simplify their usage and handle errors efficiently.
+            it is used to simplify complex system calls
+            Provide consistent error handling
+            Improve code readability and maintainability
+            Reduces repetitive error checking code
+            Makes programs cleaner and safer
+            Standard practice in network programming (e.g., Stevens' style)
+
+            Example:
+                Instead of directly using read(), write(), socket(), etc., 
+                wrapper functions check for errors and handle them.
+
+            Example Concept:
+                int n = read(sockfd, buffer, size);
+                if (n < 0) {
+                    perror("read error");
+                    exit(1);
+                }
+
+            Wrapper Version:
+                Read(sockfd, buffer, size);   // internally handles error
+
+        
+
+
+        Header Files
+            Header files (.h files) contain declarations of functions, macros, constants, and data types used in programs.
+            Provide function prototypes
+            Enable modular programming
+            Allow code reuse
+
+            Some of the Header Files in Network Programming:
+                stdio.h → input/output functions
+                stdlib.h → memory allocation, exit functions
+                string.h → string manipulation
+                unistd.h → POSIX system calls (read, write, close)
+                sys/types.h → data types
+                sys/socket.h → socket functions
+                netinet/in.h → internet address structures
+                arpa/inet.h → IP address conversion functions
+
+            Example:
+                #include <stdio.h>
+                #include <sys/socket.h>
+
+
+        Libraries
+                Libraries are collections of precompiled functions that can be used in programs 
+                    to perform specific tasks.
+                It helps in code reuse
+                Faster development
+                Reliable and tested functions
+
+            Types:
+                Standard Libraries (e.g., libc)
+                System Libraries(eg. libpthread)
+                Network Libraries(eg. libcurl, zeromq)
+
+            Examples in Network Programming:
+                Socket library (for socket(), connect(), bind())
+                Math library (libm)
+                C standard library (libc)
+
+            Linking Libraries:
+                During compilation using gcc
+                Example:
+                    gcc program.c -o program
+
+                (For special libraries, flags like -lm may be used)
+
+
+        Port Numbers
+                A port number is a 16-bit logical identifier used to identify a specific 
+                process or service running on a host in a network.
+                Enables multiple services on a single machine
+                Used by transport layer protocols (TCP/UDP)
+                IP address identifies host
+                Port number identifies application
+
+                Range: 0 to 65535
+
+            There are three types of Ports:
+                1. Well-known Ports (0–1023)
+                    Reserved for common services
+                    Examples:
+                        HTTP: 80
+                        FTP: 21
+                        Telnet: 23
+                        SMTP: 25
+
+                2. Registered Ports (1024–49151)
+                    Used by user applications
+                    Examples:
+                        3306: MySQL Database
+                        5432: PostgreSQL Database
+                        27017: MongoDB
+                        6379: Redis
+
+                3. Dynamic/Private Ports (49152–65535)
+                    Temporary ports assigned by OS
+                    For example: 
+                        When you open a browser tab to visit Google (Port 443), 
+                            your OS picks a random port from this range (e.g., 51023) to be your "return address."
+                        Once you close the connection, the port is freed up for another app to use.
+        
+
+        IP Address
+                An IP address is a unique numerical identifier assigned to each device in a network 
+                    for identification and communication.
+                It is a logical address and may changes on the different networks.
+                Subnet Mask defines network and host portion
+                Default Gateway denotes Router for external communication
+
+            Types of IP Address:
+                1. IPv4 (32-bit)
+                    Format: x.x.x.x (e.g., 192.168.1.1)
+                    Divided into 4 octets (8 bits each)
+
+                    Classes of IPv4:
+                        Class A: 1–126 (large networks)
+                        Class B: 128–191 (medium networks)
+                        Class C: 192–223 (small networks)
+
+                    Special Addresses:
+                        127.0.0.1 → Loopback (localhost)
+                        0.0.0.0 → Default address
+                        255.255.255.255 → Broadcast
+
+                2. IPv6 (128-bit)
+                    Format: hexadecimal (e.g., 2001:db8::1)
+                    Designed to replace IPv4
+                    Provides larger address space
+
+            Types of IP Addressing:
+                Unicast: One-to-one communication
+                Broadcast: One-to-all (IPv4 only)
+                Multicast: One-to-many
+
+
+1.5 Server Types
+        A server is a program or system that provides services or resources to clients over a network. \
+        Depending on how client requests are handled, servers are classified into 
+                iterative servers, 
+                concurrent servers, and 
+                networked servers. 
+            These types differ in performance, complexity, and real-world applicability.
+
+
+    Iterative Server
+            An iterative server is a type of server that handles one client request at a time 
+                in a sequential manner. 
+            It accepts a connection, processes the request completely, sends a response, 
+                and then moves to the next client. 
+            Due to its simple design and low resource usage, it is easy to implement and 
+            suitable for small-scale or educational applications such as 
+                basic file servers or 
+                testing servers. 
+            However, it suffers from poor performance and high waiting time 
+                when multiple clients request service simultaneously, 
+                making it unsuitable for real-world high-traffic systems.
+
+        Working Principle:
+            1. Server starts and waits for a client connection.
+            2. Accepts one client request.
+            3. Processes the request.
+            4. Sends response to the client.
+            5. Closes connection.
+            6. Returns to waiting state.
+
+        Pseudo Flow:
+            while (true) {
+                accept connection
+                process request
+                send response
+                close connection
+            }
+
+
+    Concurrent Server
+            A concurrent server is a server that can handle multiple client requests simultaneously 
+                by creating separate processes or threads for each client. 
+            This allows parallel processing, improving performance and responsiveness, 
+                especially in high-traffic environments. 
+            It is used in real-world applications such as 
+                    web servers, 
+                    database servers, and 
+                    real-time systems. 
+            Although it provides high scalability and efficiency, it is more complex to implement and 
+                requires careful management of system resources and synchronization.
+
+        Working Principle:
+            1. Server listens for incoming connections.
+            2. On client connection, creates a new process/thread.
+            3. Child process/thread handles the request.
+            4. Parent continues accepting new clients.
+
+        Methods of Concurrency:
+            Process-based (fork())
+            Thread-based (pthreads)
+            Event-driven (non-blocking I/O)
+
+        Pseudo Flow:
+            while (true) {
+                accept connection
+                if (fork() == 0) {
+                    process request
+                    send response
+                    close connection
+                    exit
+                }
+                close client socket (parent)
+            }
+
+
+    Networked Servers
+            Networked servers are servers designed to operate over a network, 
+                providing services to multiple remote clients using standard communication protocols 
+                such as TCP/IP. 
+            They form the backbone of distributed systems and support applications like 
+                        web services, 
+                        file transfer, 
+                        email systems, and 
+                        cloud computing. 
+            These servers use socket programming, port binding, and network protocols to communicate efficiently. 
+            Their main advantage is centralized resource sharing and remote accessibility, 
+            but they require proper configuration, security measures, and network reliability to function effectively.
+            Features of network servers is:
+                Uses TCP/IP protocols
+                Communicates via sockets
+                Supports remote access
+                Can be iterative or concurrent
+
+        Types:
+            Web Server (HTTP/HTTPS)
+            File Server (FTP)
+            Mail Server (SMTP, POP3, IMAP)
+            Application Server
+            Database Server
+
+        Architecture:
+            Client sends request over network
+            Server processes request
+            Server sends response back
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Important Exam Points:
+                    Wrapper functions simplify system calls and handle errors
+                    Header files contain function declarations and are included using #include
+                    Libraries provide reusable functions
+                    Port numbers identify services (0–65535 range)
+                    IP address uniquely identifies a device in a network
+                    Socket = IP address + Port number
+                    Iterative server handles one client at a time
+                    Concurrent server handles multiple clients simultaneously
+                    fork() is used for process-based concurrency
+                    Networked servers use sockets and TCP/IP protocols
+                    Most real-world servers are concurrent servers
